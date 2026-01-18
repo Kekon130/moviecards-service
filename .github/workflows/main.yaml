@@ -20,7 +20,7 @@ jobs:
         run: mvn clean package -DskipTests
         
       - name: Upload artifact for deployment job
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: moviecards-service-java
           path: "${{ github.workspace }}/target/*.jar"
@@ -51,7 +51,7 @@ jobs:
       
     steps:
       - name: Download artifact from build job
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: moviecards-service-java
       
@@ -59,7 +59,7 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'moviecards-service-hilera'
+          app-name: 'moviecards-service-plaza'
           slot-name: 'Production'
           package: '*.jar'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_9AA79AE5BCB144B6A9C65F1723D3D874 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_5C7E216B10484E209A54ACD823C7D170 }}
