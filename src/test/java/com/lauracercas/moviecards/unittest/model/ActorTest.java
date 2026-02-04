@@ -17,14 +17,14 @@ public class ActorTest {
 
     @Test
     void testSetGetId() {
-        Integer idExample = 7;
+        Integer idExample = 1;
         actor.setId(idExample);
         assertEquals(idExample, actor.getId());
     }
 
     @Test
     void testSetGetName() {
-        String nameExample = "Doris";
+        String nameExample = "Sample name";
         actor.setName(nameExample);
         assertEquals(nameExample, actor.getName());
     }
@@ -37,8 +37,15 @@ public class ActorTest {
     }
 
     @Test
+    void testSetGetDeathDate() {
+        Date deathDateExample = new Date();
+        actor.setDeathDate(deathDateExample);
+        assertEquals(deathDateExample, actor.getDeathDate());
+    }
+
+    @Test
     void testSetGetCountry() {
-        String countryExample = "Spain";
+        String countryExample = "Sample country";
         actor.setCountry(countryExample);
         assertEquals(countryExample, actor.getCountry());
 
